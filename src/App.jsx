@@ -1,6 +1,11 @@
 import "./App.scss";
+import { useInView } from "react-intersection-observer";
 
 function App() {
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0.75,
+  });
   return (
     <div className="home">
       <div className="left">
@@ -73,7 +78,7 @@ function App() {
           />
         </div>
       </div>
-      <div className="right delay-more">
+      <div className="right delay-more" ref={ref}>
         <div className="welcome explore">
           <div className="letter">E</div>
           <div className="letter">x</div>
@@ -84,13 +89,14 @@ function App() {
           <div className="letter">e</div>
           <div className="letter">.</div>
         </div>
+        {`Header inside viewport ${inView}. Todo: add a conditional class to trigger animation for right section`}
         <div className="hr-animate delay-more" />
 
-        {/* <div class="bio delay delay-most">Take a look around:</div> */}
+        {/* <div className="bio delay delay-most">Take a look around:</div> */}
 
-        <div class="card-wrapper">
+        <div className="card-wrapper">
           <a>
-            <div class="link-card one">
+            <div className="link-card one">
               <div>
                 <img src="./icon-resume.png" />
                 Resume
@@ -101,7 +107,7 @@ function App() {
             </div>
           </a>
           <a>
-            <div class="link-card two">
+            <div className="link-card two">
               <div>
                 <img src="./icon-portfolio.png" />
                 Portfolio
@@ -112,7 +118,7 @@ function App() {
             </div>
           </a>
           <a href={`mailto:keithjohnsdev@gmail.com?subject=Hello!`}>
-            <div class="link-card three">
+            <div className="link-card three">
               <div>
                 <img src="./icon-email.png" />
                 Say Hello
@@ -127,7 +133,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div class="link-card four">
+            <div className="link-card four">
               <div>
                 <img src="./icon-github.png" />
                 GitHub

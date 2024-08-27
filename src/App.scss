@@ -175,6 +175,7 @@ a {
   min-width: 250px;
   max-width: 400px;
   animation: colorOut 0.5s ease forwards;
+  will-change: border-radius, filter;
 
   &:hover {
     animation: colorIn 0.5s ease forwards;
