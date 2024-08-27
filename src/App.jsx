@@ -91,27 +91,25 @@ function App() {
         <div class="card-wrapper">
           <div class="link-card">
             <div>
-              <img src="/icon-resume.png" />
+              <img src="./icon-resume.png" />
               Resume
-            </div>{" "}
+            </div>
             <div>
               <img className="arrow" src="/icon-arrow.png" />
             </div>
           </div>
           <div class="link-card">
-            {" "}
             <div>
-              <img src="/icon-portfolio.png" />
+              <img src="./icon-portfolio.png" />
               Portfolio
-            </div>{" "}
+            </div>
             <div>
               <img className="arrow" src="/icon-arrow.png" />
             </div>
           </div>
           <div class="link-card">
-            {" "}
             <div>
-              <img src="/icon-email.png" />
+              <img src="./icon-email.png" />
               Say Hello
             </div>
             <div>
