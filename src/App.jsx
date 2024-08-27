@@ -67,7 +67,7 @@ function App() {
         <div className="profile-img-wrapper delay pic-delay">
           <img
             className="profile-img"
-            src="/keith-profile.jpg"
+            src="./keith-profile.jpg"
             alt="Me and a friend."
             title="Me and a friend."
           />
