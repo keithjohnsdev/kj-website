@@ -115,7 +115,7 @@ function App() {
             <div class="link-card three">
               <div>
                 <img src="./icon-email.png" />
-                keithjohnsdev@gmail.com
+                Say Hello
               </div>
               <div>
                 <img className="arrow" src="./icon-arrow.png" />

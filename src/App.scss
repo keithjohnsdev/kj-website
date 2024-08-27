@@ -6,7 +6,7 @@ body {
   padding: 2rem;
   font-family: "Poppins", sans-serif;
   font-style: normal;
-  margin: 2% auto 0;
+  margin: 1% auto 0;
   width: 80vw;
 }
 
@@ -140,6 +140,7 @@ a {
 .bio {
   max-width: 65%;
   margin-top: 20px;
+  font-size: medium;
 }
 
 .bio-text {
@@ -170,7 +171,9 @@ a {
 .profile-img {
   filter: grayscale(100%);
   border-radius: 50%;
-  max-width: 50%;
+  width: 50%;
+  min-width: 250px;
+  max-width: 400px;
   animation: colorOut 0.5s ease forwards;
 
   &:hover {
@@ -211,7 +214,7 @@ a {
     padding: 10px 20px;
     margin-bottom: 20px;
     cursor: pointer;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     animation: slideLeft 1s ease forwards;
     opacity: 0;
     transform: translateX(30px);
@@ -244,7 +247,7 @@ a {
 
     & .arrow {
       width: 40px;
-      transition: transform .3s ease;
+      transition: transform 0.3s ease;
       margin-right: 0px;
     }
 
@@ -311,5 +314,124 @@ a {
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+//---------------------------------------------- Media Queries ------------------------------------------------
+
+@media only screen and (min-width: 2000px) {
+  #root {
+    margin: 1% auto 0;
+    width: 60vw;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .card-wrapper .link-card {
+    width: 350px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .welcome,
+  .explore {
+    font-size: 40px;
+  }
+
+  @keyframes fullWidth {
+    100% {
+      width: 250px;
+    }
+  }
+
+  .bio {
+    max-width: 80%;
+    margin-top: 20px;
+    font-size: small;
+  }
+
+  .profile-img-wrapper {
+    margin-top: 40px;
+  }
+
+  .profile-img {
+    width: 70%;
+    max-width: 400px;
+    min-width: 200px;
+  }
+
+  .card-wrapper .link-card {
+    width: 90%;
+    padding: 10px 20px;
+    margin-bottom: 17px;
+    font-size: small;
+
+    & img {
+      width: 30px;
+      margin-right: 20px;
+    }
+
+    & .arrow {
+      width: 25px;
+    }
+
+    &:hover .arrow {
+      transform: translateX(3px);
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    & .left,
+    .right {
+      max-width: 75%;
+      width: 75%;
+      margin-bottom: 30px;
+    }
+
+    & .welcome {
+      display: flex;
+      justify-content: center;
+    }
+
+    & .bio {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+    }
+  }
+
+  .hr-animate {
+    margin: 15px auto 10px;
+  }
+
+  @keyframes fullWidth {
+    100% {
+      width: 80%;
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #root {
+    margin: 1% auto 0;
+    width: 100vw;
+  }
+
+  .home {
+    .left,
+    .right {
+      max-width: 100%;
+      width: 100%;
+      margin-bottom: 30px;
+    }
   }
 }
