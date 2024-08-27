@@ -35,8 +35,7 @@ function App() {
               rel="noopener noreferrer"
             >
               Misfit Labs
-            </a>{" "}
-            (their site is my work as well). I've also had the privilege of
+            </a>. I've also had the privilege of
             collaborating with innovative companies like{" "}
             <a
               href="https://www.msprecovery.com/"
@@ -95,7 +94,7 @@ function App() {
               Resume
             </div>
             <div>
-              <img className="arrow" src="/icon-arrow.png" />
+              <img className="arrow" src="./icon-arrow.png" />
             </div>
           </div>
           <div class="link-card">
@@ -104,7 +103,7 @@ function App() {
               Portfolio
             </div>
             <div>
-              <img className="arrow" src="/icon-arrow.png" />
+              <img className="arrow" src="./icon-arrow.png" />
             </div>
           </div>
           <div class="link-card">
@@ -113,7 +112,7 @@ function App() {
               Say Hello
             </div>
             <div>
-              <img className="arrow" src="/icon-arrow.png" />
+              <img className="arrow" src="./icon-arrow.png" />
             </div>
           </div>
         </div>
