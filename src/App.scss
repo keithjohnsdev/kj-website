@@ -6,7 +6,7 @@ body {
   padding: 2rem;
   font-family: "Poppins", sans-serif;
   font-style: normal;
-  margin: 2% auto;
+  margin: 2% auto 0;
   width: 80vw;
 }
 
@@ -22,6 +22,15 @@ a {
 
   &:hover {
     color: rgb(84, 153, 88);
+  }
+
+  & .link-card {
+    font-weight: 400;
+    color: black;
+
+    &:hover {
+      color: rgb(84, 153, 88);
+    }
   }
 }
 
@@ -88,35 +97,35 @@ a {
     animation: fadeInScale 1s ease forwards;
 
     &:nth-of-type(1) {
-      animation-delay: 2.4s;
+      animation-delay: 2.3s;
     }
 
     &:nth-of-type(2) {
-      animation-delay: 2.43s;
+      animation-delay: 2.33s;
     }
 
     &:nth-of-type(3) {
-      animation-delay: 2.46s;
+      animation-delay: 2.36s;
     }
 
     &:nth-of-type(4) {
-      animation-delay: 2.49s;
+      animation-delay: 2.39s;
     }
 
     &:nth-of-type(5) {
-      animation-delay: 2.52s;
+      animation-delay: 2.42s;
     }
 
     &:nth-of-type(6) {
-      animation-delay: 2.55s;
+      animation-delay: 2.45s;
     }
 
     &:nth-of-type(7) {
-      animation-delay: 2.58s;
+      animation-delay: 2.48s;
     }
 
     &:nth-of-type(8) {
-      animation-delay: 2.61s;
+      animation-delay: 2.51s;
     }
   }
 }
@@ -207,16 +216,20 @@ a {
     opacity: 0;
     transform: translateX(30px);
 
-    &:nth-of-type(1) {
+    &.one {
+      animation-delay: 2.8s;
+    }
+
+    &.two {
       animation-delay: 3s;
     }
 
-    &:nth-of-type(2) {
-      animation-delay: 3.25s;
+    &.three {
+      animation-delay: 3.2s;
     }
 
-    &:nth-of-type(3) {
-      animation-delay: 3.5s;
+    &.four {
+      animation-delay: 3.4s;
     }
 
     & div {

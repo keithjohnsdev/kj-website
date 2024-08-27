@@ -35,8 +35,9 @@ function App() {
               rel="noopener noreferrer"
             >
               Misfit Labs
-            </a>. I've also had the privilege of
-            collaborating with innovative companies like{" "}
+            </a>
+            . I've also had the privilege of collaborating with innovative
+            companies like{" "}
             <a
               href="https://www.msprecovery.com/"
               target="_blank"
@@ -88,33 +89,54 @@ function App() {
         {/* <div class="bio delay delay-most">Take a look around:</div> */}
 
         <div class="card-wrapper">
-          <div class="link-card">
-            <div>
-              <img src="./icon-resume.png" />
-              Resume
+          <a>
+            <div class="link-card one">
+              <div>
+                <img src="./icon-resume.png" />
+                Resume
+              </div>
+              <div>
+                <img className="arrow" src="./icon-arrow.png" />
+              </div>
             </div>
-            <div>
-              <img className="arrow" src="./icon-arrow.png" />
+          </a>
+          <a>
+            <div class="link-card two">
+              <div>
+                <img src="./icon-portfolio.png" />
+                Portfolio
+              </div>
+              <div>
+                <img className="arrow" src="./icon-arrow.png" />
+              </div>
             </div>
-          </div>
-          <div class="link-card">
-            <div>
-              <img src="./icon-portfolio.png" />
-              Portfolio
+          </a>
+          <a href={`mailto:keithjohnsdev@gmail.com?subject=Hello!`}>
+            <div class="link-card three">
+              <div>
+                <img src="./icon-email.png" />
+                keithjohnsdev@gmail.com
+              </div>
+              <div>
+                <img className="arrow" src="./icon-arrow.png" />
+              </div>
             </div>
-            <div>
-              <img className="arrow" src="./icon-arrow.png" />
+          </a>
+          <a
+            href="https://github.com/keithjohnsdev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="link-card four">
+              <div>
+                <img src="./icon-github.png" />
+                GitHub
+              </div>
+              <div>
+                <img className="arrow" src="./icon-arrow.png" />
+              </div>
             </div>
-          </div>
-          <div class="link-card">
-            <div>
-              <img src="./icon-email.png" />
-              Say Hello
-            </div>
-            <div>
-              <img className="arrow" src="./icon-arrow.png" />
-            </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
