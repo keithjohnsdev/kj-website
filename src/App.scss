@@ -72,7 +72,7 @@ body {
   z-index: 1;
   display: none;
   background-color: rgba(255, 255, 255);
-  padding: 10px;
+  padding: 20px;
   border-radius: 50%;
   top: 20px;
   right: 20px;
@@ -86,7 +86,7 @@ body {
   &.open {
     border-radius: 10px;
     width: 80px;
-    height: 130px;
+    height: 150px;
 
     & .menu-button {
       border-radius: 10px;
@@ -97,14 +97,14 @@ body {
     width: 100%;
     z-index: 2;
     text-align: center;
+    margin-top: 26px;
   }
 
   & .navlink {
     opacity: 0;
     animation: fadeIn 0.1s ease forwards;
     animation-delay: 0.27s;
-    font-size: small;
-    padding: 3px;
+    padding: 5px;
     z-index: 2;
     transition: color 0.3s;
 
@@ -148,7 +148,7 @@ body {
 }
 
 .bar2 {
-  top: 10px; /* Center the middle bar */
+  top: 9px; /* Center the middle bar */
   right: 0;
 }
 
