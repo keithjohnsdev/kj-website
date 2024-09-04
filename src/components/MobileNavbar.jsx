@@ -39,8 +39,8 @@ const MobileNavbar = ({ handleNavigate }) => {
           </div>
         )}
         {isOpen && <div className="navlink" onClick={() => handleNavigate("/resume")}>Resume</div>}
-        {isOpen && <div className="navlink">Home</div>}
-        {isOpen && <div className="navlink">Home</div>}
+        {isOpen && <div className="navlink">Portfolio</div>}
+        {isOpen && <div className="navlink">Email</div>}
       </div>
     </div>
   );
