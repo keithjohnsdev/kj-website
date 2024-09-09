@@ -1,47 +1,87 @@
 import { useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import Navbar from "../components/Navbar";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const navigate = useNavigate();
   let firstVisit = !sessionStorage.getItem("visited");
-  console.log(firstVisit)
+  const [skinny, setSkinny] = useState(false);
 
-  const { ref, inView, entry } = useInView({
-    /* Optional options */
-    threshold: 0.75,
-  });
+  useEffect(() => {
+    const handleResize = () => {
+      setSkinny(window.innerWidth <= 570);
+    };
 
-  function handleNavigate (destination) {
-    sessionStorage.setItem("visited", true)
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // const { ref, inView, entry } = useInView({
+  //   /* Optional options */
+  //   threshold: 0.75,
+  // });
+
+  function handleNavigate(destination) {
+    sessionStorage.setItem("visited", true);
     navigate(destination);
   }
   return (
     <div className="home">
       <Navbar />
       <div className="left">
-        <div className="welcome">
-          <div className={`letter ${firstVisit ? "animate-letter" : "no-animate"}`}>W</div>
-          <div className={`letter ${firstVisit ? "animate-letter" : "no-animate"}`}>e</div>
-          <div className={`letter ${firstVisit ? "animate-letter" : "no-animate"}`}>l</div>
-          <div className={`letter ${firstVisit ? "animate-letter" : "no-animate"}`}>c</div>
-          <div className={`letter ${firstVisit ? "animate-letter" : "no-animate"}`}>o</div>
-          <div className={`letter ${firstVisit ? "animate-letter" : "no-animate"}`}>m</div>
-          <div className={`letter ${firstVisit ? "animate-letter" : "no-animate"}`}>e</div>
-          <div className={`letter ${firstVisit ? "animate-letter" : "no-animate"}`}>.</div>
-        </div>
-        <div className={ firstVisit ? "hr-animate" : "hr"} />
+        <h1 className="welcome">
+          <div
+            className={`letter ${firstVisit ? "animate-letter" : "no-animate"}`}
+          >
+            W
+          </div>
+          <div
+            className={`letter ${firstVisit ? "animate-letter" : "no-animate"}`}
+          >
+            e
+          </div>
+          <div
+            className={`letter ${firstVisit ? "animate-letter" : "no-animate"}`}
+          >
+            l
+          </div>
+          <div
+            className={`letter ${firstVisit ? "animate-letter" : "no-animate"}`}
+          >
+            c
+          </div>
+          <div
+            className={`letter ${firstVisit ? "animate-letter" : "no-animate"}`}
+          >
+            o
+          </div>
+          <div
+            className={`letter ${firstVisit ? "animate-letter" : "no-animate"}`}
+          >
+            m
+          </div>
+          <div
+            className={`letter ${firstVisit ? "animate-letter" : "no-animate"}`}
+          >
+            e
+          </div>
+        </h1>
         <div className="bio">
           <div className={`bio-text ${!firstVisit && "no-animate"}`}>
             Hey, I'm Keith, a web developer with a passion for clean, effective
             design & code, always with the user experience in mind.
           </div>
-          <br />
           <div className={`bio-text ${!firstVisit && "no-animate"}`}>
             I specialize in modern front-end frameworks (React & Vue), as well
             as utilizing NodeJS & Python for the back-end.
           </div>
-          <br />
           <div className={`bio-text ${!firstVisit && "no-animate"}`}>
             Lately, I've been in charge of delivering full-stack microservices
             for the talented team at{" "}
@@ -80,7 +120,124 @@ export default function Home() {
             .
           </div>
         </div>
-        <div className={`profile-img-wrapper ${firstVisit && "delay pic-delay"}`}>
+        <div className="card-wrapper">
+          <div className="card-row">
+            <a
+              onClick={() => {
+                handleNavigate("/resume");
+              }}
+            >
+              <div
+                className={`link-card one ${
+                  !firstVisit && "less-delay"
+                } fast-animation`}
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.6066 1.3934H22.8198M22.8198 1.3934V22.6066M22.8198 1.3934L1.6066 22.6066"
+                    stroke="#622125"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <div className="card-title">Resume</div>
+              </div>
+            </a>
+            <a
+              onClick={() => {
+                handleNavigate("/resume");
+              }}
+            >
+              <div
+                className={`link-card two ${
+                  !firstVisit && "less-delay"
+                } fast-animation`}
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.6066 1.3934H22.8198M22.8198 1.3934V22.6066M22.8198 1.3934L1.6066 22.6066"
+                    stroke="#622125"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <div className="card-title">Portfolio</div>
+              </div>
+            </a>
+          </div>
+
+          <div className="card-row last-row">
+            <a href={`mailto:keithjohnsdev@gmail.com?subject=Hello!`}>
+              <div
+                className={`link-card three ${
+                  !firstVisit && "less-delay"
+                } fast-animation`}
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.6066 1.3934H22.8198M22.8198 1.3934V22.6066M22.8198 1.3934L1.6066 22.6066"
+                    stroke="#622125"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <div className="card-title">Say Hello</div>
+              </div>
+            </a>
+            <a
+              href="https://github.com/keithjohnsdev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                className={`link-card four ${
+                  !firstVisit && "less-delay"
+                } fast-animation`}
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.6066 1.3934H22.8198M22.8198 1.3934V22.6066M22.8198 1.3934L1.6066 22.6066"
+                    stroke="#622125"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <div className="card-title">Github</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div
+          className={`profile-img-wrapper ${firstVisit && "delay pic-delay"}`}
+        >
           <img
             className={`profile-img ${!firstVisit && "no-animate"}`}
             src="./keith-profile.jpg"
@@ -89,74 +246,19 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="right delay-more" ref={ref}>
-        <div className="welcome explore">
-          <div className={`letter ${!firstVisit && "no-animate"}`}>E</div>
-          <div className={`letter ${!firstVisit && "no-animate"}`}>x</div>
-          <div className={`letter ${!firstVisit && "no-animate"}`}>p</div>
-          <div className={`letter ${!firstVisit && "no-animate"}`}>l</div>
-          <div className={`letter ${!firstVisit && "no-animate"}`}>o</div>
-          <div className={`letter ${!firstVisit && "no-animate"}`}>r</div>
-          <div className={`letter ${!firstVisit && "no-animate"}`}>e</div>
-          <div className={`letter ${!firstVisit && "no-animate"}`}>.</div>
-        </div>
-        <div className={ firstVisit ? "hr-animate delay-more" : "hr"} />
-
-        {/* <div className="bio delay delay-most">Take a look around:</div> */}
-
-        <div className="card-wrapper">
-          <a
-            onClick={() => {
-              handleNavigate("/resume")
-            }}
-          >
-            <div className={`link-card one ${!firstVisit && "less-delay"} fast-animation`}>
-              <div>
-                <img src="./icon-resume.png" />
-                Resume
-              </div>
-              <div>
-                <img className="arrow" src="./icon-arrow.png" />
-              </div>
-            </div>
-          </a>
-          <a>
-            <div className={`link-card two ${!firstVisit && "less-delay"} fast-animation`}>
-              <div>
-                <img src="./icon-portfolio.png" />
-                Portfolio
-              </div>
-              <div>
-                <img className="arrow" src="./icon-arrow.png" />
-              </div>
-            </div>
-          </a>
-          <a href={`mailto:keithjohnsdev@gmail.com?subject=Hello!`}>
-            <div className={`link-card three ${!firstVisit && "less-delay"} fast-animation`}>
-              <div>
-                <img src="./icon-email.png" />
-                Say Hello
-              </div>
-              <div>
-                <img className="arrow" src="./icon-arrow.png" />
-              </div>
-            </div>
-          </a>
-          <a
-            href="https://github.com/keithjohnsdev"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className={`link-card four ${!firstVisit && "less-delay"} fast-animation`}>
-              <div>
-                <img src="./icon-github.png" />
-                GitHub
-              </div>
-              <div>
-                <img className="arrow" src="./icon-arrow.png" />
-              </div>
-            </div>
-          </a>
+      <div className="middle">
+        {skinny ? <img src="./squiggle-skinny.png" alt="squiggle" /> : <img src="./squiggle.png" alt="squiggle" />}
+      </div>
+      <div className="right">
+        <div
+          className={`profile-img-wrapper ${firstVisit && "delay pic-delay"}`}
+        >
+          <img
+            className={`profile-img ${!firstVisit && "no-animate"}`}
+            src="./keith-profile.jpg"
+            alt="Me and a friend."
+            title="Me and a friend."
+          />
         </div>
       </div>
     </div>
