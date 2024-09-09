@@ -159,6 +159,7 @@ body {
   right: 20px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.11);
   transition: all ease 0.3s;
+  will-change: box-shadow, border-radius, height, width;
 
   &:hover {
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.233);
@@ -1006,6 +1007,14 @@ a {
     .middle {
       flex: 1;
       margin-left: -90px;
+    }
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .home {
+    .middle {
+      margin-left: -50px;
     }
   }
 }
