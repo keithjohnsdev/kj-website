@@ -3,6 +3,7 @@ import MobileNavbar from "./MobileNavbar";
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const location = window.location.pathname.slice(11);
 
   function handleNavigate(destination) {
     console.log("ping")
@@ -14,7 +15,7 @@ export default function Navbar() {
       <div className="navbar">
         <div className="left-navs">
           <div
-            className="navlink"
+            className={`navlink ${location === "/" ? "current" : ""}`}
             onClick={() => {
               handleNavigate("/");
             }}
@@ -22,14 +23,14 @@ export default function Navbar() {
             Home<div className="underline"></div>
           </div>
           <div
-            className="navlink"
+            className={`navlink ${location === "/resume" ? "current" : ""}`}
             onClick={() => {
               handleNavigate("/resume");
             }}
           >
             Resume<div className="underline"></div>
           </div>
-          <div className="navlink">
+          <div className={`navlink ${location === "/portfolio" ? "current" : ""}`}>
             Portfolio<div className="underline"></div>
           </div>
         </div>

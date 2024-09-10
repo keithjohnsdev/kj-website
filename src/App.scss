@@ -36,7 +36,7 @@ body {
   width: 100%;
 }
 
-.home, .resume {
+.home {
   display: flex;
   position: relative;
   height: 960px;
@@ -105,7 +105,9 @@ body {
   left: 0;
   right: 0;
   padding: 0 60px;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.965);
+  // background-color: $primary;
+  // box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.21);
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -140,6 +142,14 @@ body {
     &.email-icon {
       display: none;
     }
+
+    &.current {
+      color: $secondary;
+
+      & .underline {
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -157,7 +167,7 @@ body {
   border-radius: 50%;
   top: 20px;
   right: 20px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.11);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.21);
   transition: all ease 0.3s;
   will-change: box-shadow, border-radius, height, width;
 
@@ -566,21 +576,131 @@ a {
 // ---------------------------------------------- Resume ------------------------------------------------
 
 .resume {
-  padding-top: 20px;
+  padding-top: 50px;
+  padding-left: 80px;
+  padding-bottom: 100px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .flex-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 80px;
+  }
+
+  h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: $secondary;
+    margin: 50px 0 30px;
+  }
+
+  h3 {
+    font-weight: 900;
+  }
+
+  h4 {
+    color: $secondary;
+  }
+
+  h5 {
+    color: rgb(70, 70, 70);
+    margin-bottom: 15px;
+  }
+
+  .work {
+    margin-bottom: 30px;
+  }
+
+  .description {
+    margin-top: 10px;
+    font-size: 13px;
+    padding-left: 20px;
+    max-width: 620px;
+    line-height: 1.25;
+
+    li {
+      margin-top: 10px;
+      &::marker {
+        color: $secondary;
+      }
+    }
+  }
+
+  .relative {
+    position: relative;
+  }
+
+  .card-wrapper {
+    &.relative {
+      display: none;
+      margin-top: 28px;
+
+      & .link-card {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    .card-row {
+      margin-bottom: 0;
+    }
+  }
 
   .link-card {
-    position: absolute;
+    position: fixed;
     top: 80px;
-    right: 20px;
-  }
+    right: 80px;
+    line-height: 1.1;
+    width: 180px;
+    height: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    background-color: $primary;
+    animation: none;
+    opacity: 1;
+    transform: none;
 
-  .block {
-    display: block;
-  }
-}
+    .card-title {
+      position: relative;
+      font-size: 18px;
+      bottom: 0;
+      left: 0;
+    }
 
-.block {
-  display: block;
+    svg {
+      position: relative;
+      top: 0;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease-out;
+    }
+
+    &:hover {
+      svg {
+        transform: translate(5px, -5px);
+        top: 0;
+        right: 0;
+      }
+    }
+  }
 }
 
 //---------------------------------------------- Keyframes ------------------------------------------------
@@ -799,6 +919,18 @@ a {
       }
     }
   }
+
+  .resume {
+    .card-wrapper {
+      &.fixed {
+        display: none;
+      }
+
+      &.relative {
+        display: flex;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -877,7 +1009,25 @@ a {
 
   .navbar {
     display: none;
-  } 
+  }
+
+  .resume {
+    max-width: 550px;
+    padding-top: 30px;
+    padding-left: 50px;
+    .flex-row {
+      flex-direction: column-reverse;
+      align-items: normal;
+
+      .card-wrapper.relative {
+        margin-top: 0px;
+      }
+
+      h1 {
+        margin-top: 30px;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 630px) {
@@ -952,11 +1102,14 @@ a {
       margin-left: -70px;
     }
   }
+
+  .resume {
+      max-width: 480px;
+  }
 }
 
 @media screen and (max-width: 570px) {
   .home {
-
     .left {
       margin-left: 10px;
 
@@ -977,13 +1130,12 @@ a {
 
         & img {
           border-radius: 50%;
-          width: 269px;      
+          width: 269px;
           z-index: 10;
         }
       }
 
       .card-wrapper {
-
         .card-row {
           flex-direction: column;
           margin-bottom: 0;
@@ -1029,6 +1181,10 @@ a {
       margin-left: -90px;
     }
   }
+
+  .resume {
+    max-width: 450px;
+  }
 }
 
 @media screen and (max-width: 530px) {
@@ -1036,6 +1192,18 @@ a {
     .middle {
       margin-left: -50px;
     }
+  }
+
+  .resume {
+    padding-left: 30px;
+    max-width: 420px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .resume {
+    padding-left: 20px;
+    max-width: 400px;
   }
 }
 
@@ -1048,6 +1216,36 @@ a {
     .middle {
       flex: 1;
       margin-left: -80px;
+    }
+  }
+
+  .resume {
+    padding-left: 20px;
+    max-width: 350px;
+
+    .description {
+      padding-right: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .resume {
+    padding-left: 15px;
+    max-width: 320px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .navbar {
+    padding: 0 15vw;
+  }
+
+  .resume {
+    padding: 50px calc(15vw + 20px) 0;
+
+    .link-card {
+      right: calc(15vw + 20px);
     }
   }
 }
@@ -1064,6 +1262,18 @@ a {
       padding-right: 5vw;
     }
   }
+
+  .navbar {
+    padding: 0 20vw;
+  }
+
+  .resume {
+    padding: 50px calc(20vw + 20px) 0;
+
+    .link-card {
+      right: calc(20vw + 20px);
+    }
+  }
 }
 
 @media screen and (min-width: 2000px) {
@@ -1073,6 +1283,18 @@ a {
     }
     .right {
       padding-right: 10vw;
+    }
+  }
+
+  .navbar {
+    padding: 0 25vw;
+  }
+
+  .resume {
+    padding: 50px calc(25vw + 20px) 0;
+
+    .link-card {
+      right: calc(25vw + 20px);
     }
   }
 }
