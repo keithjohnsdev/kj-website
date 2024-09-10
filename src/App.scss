@@ -642,6 +642,7 @@ a {
   }
 
   .card-wrapper {
+    user-select: none;
     &.relative {
       display: none;
       margin-top: 28px;
