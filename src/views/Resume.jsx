@@ -4,7 +4,6 @@ export default function Resume() {
   let firstVisit = !sessionStorage.getItem("visited");
 
   const handleDownload = () => {
-    // Replace 'path/to/your/resume.pdf' with the actual path to your resume file
     const resumeUrl = "./Resume - Keith Johns.pdf";
     window.open(resumeUrl, "_blank");
   };
@@ -18,9 +17,7 @@ export default function Resume() {
           <div className="card-wrapper relative">
             <div className="card-row">
               <a
-                onClick={() => {
-                  handleNavigate("/resume");
-                }}
+                onClick={handleDownload}
               >
                 <div
                   className="link-card flat relative"
@@ -163,9 +160,7 @@ export default function Resume() {
         <div className="card-wrapper fixed">
           <div className="card-row">
             <a
-              onClick={() => {
-                handleNavigate("/resume");
-              }}
+              onClick={handleDownload}
             >
               <div
                 className="link-card flat"
