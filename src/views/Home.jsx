@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { useInView } from "react-intersection-observer";
 import Navbar from "../components/Navbar";
 import { useState, useEffect } from "react";
 
@@ -80,7 +79,7 @@ export default function Home() {
           </div>
           <div className={`bio-text ${!firstVisit && "no-animate"}`}>
             I specialize in modern front-end frameworks (React & Vue), as well
-            as utilizing NodeJS & Python for the back-end.
+            as NodeJS & Python for the back-end.
           </div>
           <div className={`bio-text ${!firstVisit && "no-animate"}`}>
             Lately, I've been in charge of delivering full-stack microservices

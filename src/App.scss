@@ -36,7 +36,7 @@ body {
   width: 100%;
 }
 
-.home {
+.home, .resume {
   display: flex;
   position: relative;
   height: 960px;
@@ -88,7 +88,7 @@ body {
     }
 
     .profile-img {
-      filter: grayscale(20%);
+      filter: grayscale(40%);
       border-radius: 50%;
       width: 500px;
 
@@ -123,13 +123,13 @@ body {
     transition: color 0.4s ease;
 
     & .underline {
-      border-top: solid 1px rgb(84, 153, 88);
+      border-top: solid 1px $secondary;
       width: 0;
       transition: width 0.3s ease;
     }
 
     &:hover {
-      color: rgb(84, 153, 88);
+      color: $secondary;
       cursor: pointer;
 
       & .underline {
@@ -563,8 +563,24 @@ a {
   animation-delay: 3.3s;
 }
 
+// ---------------------------------------------- Resume ------------------------------------------------
+
 .resume {
   padding-top: 20px;
+
+  .link-card {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+  }
+
+  .block {
+    display: block;
+  }
+}
+
+.block {
+  display: block;
 }
 
 //---------------------------------------------- Keyframes ------------------------------------------------
@@ -858,6 +874,10 @@ a {
   .mobile-navbar {
     display: flex;
   }
+
+  .navbar {
+    display: none;
+  } 
 }
 
 @media screen and (max-width: 630px) {
