@@ -25,7 +25,7 @@ h1 {
 
 html {
   background-color: $primary;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 body {
   background-color: $primary;
