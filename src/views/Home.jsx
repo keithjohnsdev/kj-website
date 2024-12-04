@@ -6,10 +6,12 @@ export default function Home() {
   const navigate = useNavigate();
   let firstVisit = !sessionStorage.getItem("visited");
   const [skinny, setSkinny] = useState(false);
+  const [skinniest, setSkinniest] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setSkinny(window.innerWidth <= 570);
+      setSkinniest(window.innerWidth <= 450);
     };
 
     // Set initial value
@@ -246,7 +248,7 @@ export default function Home() {
         </div>
       </div>
       <div className="middle">
-        {skinny ? <img src="./squiggle-skinny.png" alt="squiggle" /> : <img src="./squiggle.png" alt="squiggle" />}
+        {skinniest ? <img src="./squiggle-skinniest.png" alt="squiggle" /> : skinny ? <img src="./squiggle-skinny.png" alt="squiggle" /> : <img src="./squiggle.png" alt="squiggle" />}
       </div>
       <div className="right">
         <div

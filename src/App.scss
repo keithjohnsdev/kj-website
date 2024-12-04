@@ -1,3 +1,5 @@
+//-- Variables
+
 $primary: #ede9de;
 $secondary: #622125;
 
@@ -23,12 +25,13 @@ h1 {
 
 html {
   background-color: $primary;
+  overflow-x: hidden;
 }
 body {
   background-color: $primary;
   color: black;
   font-family: "Inter", sans-serif;
-  overflow-x: hidden;
+  width: 100vw;
   min-width: 350px;
 }
 
