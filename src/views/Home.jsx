@@ -35,6 +35,7 @@ export default function Home() {
   }
   return (
     <div className="home">
+      {skinniest && <img src="./mobile-red-corner.png" alt="red corner" className="red-corner"/>}
       <Navbar />
       <div className="left">
         <h1 className="welcome">
@@ -247,9 +248,9 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="middle">
-        {skinniest ? <img src="./squiggle-skinniest.png" alt="squiggle" /> : skinny ? <img src="./squiggle-skinny.png" alt="squiggle" /> : <img src="./squiggle.png" alt="squiggle" />}
-      </div>
+      {!skinniest && <div className="middle">
+        {skinny ? <img src="./squiggle-skinny.png" alt="squiggle" /> : <img src="./squiggle.png" alt="squiggle" />}
+      </div>}
       <div className="right">
         <div
           className={`profile-img-wrapper ${firstVisit && "delay pic-delay"}`}
